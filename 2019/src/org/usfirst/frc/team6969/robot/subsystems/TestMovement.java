@@ -37,21 +37,21 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 public class TestMovement extends Subsystem {
 
-	private static final boolean invertRight = false;// use these if one side of robot is moving backwards
-	private static final boolean invertLeft = false;
-	private static final boolean stopWhenHitTargetAngle = false;
-	private static final boolean keepCommandWhenFinished = true;
-	private static final double angleErrorThreshold = 1;
-	private static final double maxSpeedAtWhatError = 45;
-	private static final double turnPower = 1;
-
-	public static double targetAngle = 0;// change to rotate robot.
-	public static boolean finishedMoving = false;// is the robot currently executing a movement or turn?
-	private static Gyro gyro;// reference needed to sense rotation
-	private static DifferentialDrive drive;// reference needed to drive
-
-	private double targetDist;
-	private double coveredDist;
+//	private static final boolean invertRight = false;// use these if one side of robot is moving backwards
+//	private static final boolean invertLeft = false;
+//	private static final boolean stopWhenHitTargetAngle = false;
+//	private static final boolean keepCommandWhenFinished = true;
+//	private static final double angleErrorThreshold = 1;
+//	private static final double maxSpeedAtWhatError = 45;
+//	private static final double turnPower = 1;
+//
+//	public static double targetAngle = 0;// change to rotate robot.
+//	public static boolean finishedMoving = false;// is the robot currently executing a movement or turn?
+//	private static Gyro gyro;// reference needed to sense rotation
+//	private static DifferentialDrive drive;// reference needed to drive
+//
+//	private double targetDist;
+//	private double coveredDist;
 	
 	public void initDefaultCommand() {
 		// Set the default command for a subsystem here.
