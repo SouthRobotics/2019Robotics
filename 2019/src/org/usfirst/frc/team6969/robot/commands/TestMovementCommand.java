@@ -53,12 +53,13 @@ public class TestMovementCommand extends Command {
 	private static Gyro gyro;// reference needed to sense rotation
 	private static DifferentialDrive drive;// reference needed to drive
 
+	//these variables will be used when the robot automatically moves forward a target distance. Not in use now.
 	private double targetDist;
 	private double coveredDist;
 	
 	//need to make constructor
 	
-	public TestMovement sub;//TODO: assign this, might need to make one in robot.java
+	public TestMovement sub;//a reference to TestMovement, just incase it will come in handy later
 	
 	public TestMovementCommand() {
 		// Use requires() here to declare subsystem dependencies
@@ -69,6 +70,7 @@ public class TestMovementCommand extends Command {
 
 	// Called just before this Command runs the first time
 	protected void initialize() {
+		sub = Robot.testMovement;
 		gyro = RobotMap.gyro;
 		gyro.reset();
 		gyro.calibrate();//unsure if needed, might reset gyro angle
