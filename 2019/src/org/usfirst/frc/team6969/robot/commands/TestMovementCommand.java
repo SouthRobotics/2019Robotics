@@ -53,6 +53,8 @@ public class TestMovementCommand extends Command {
 	private double targetDist;
 	private double coveredDist;
 	
+	//need to make constructor
+	
 	public TestMovement sub;//TODO: asign this, might need to make one in robot.java
 
 	// Called just before this Command runs the first time
