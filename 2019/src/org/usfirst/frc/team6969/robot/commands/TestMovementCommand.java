@@ -1,4 +1,4 @@
-
+/**written by Rishi Astra. If you hae questions about the code or the code makes no sence ask me**/
 /**
  * Best way to test this script would be to disable all other movement.
  * Expected calls to methods:
@@ -38,9 +38,9 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 public class TestMovementCommand extends Command {
 
 	private static final boolean invertRight = false;// use these if one side of robot is moving backwards
-	private static final boolean invertLeft = false;
-	private static final boolean stopWhenHitTargetAngle = false;
-	private static final boolean keepCommandWhenFinished = true;
+	private static final boolean invertLeft = false;//see above
+	private static final boolean stopWhenHitTargetAngle = false;//if true, isFinished returns true when the robot reaches the target angle.
+	private static final boolean keepCommandWhenFinished = true;//keep trying to reach target angle even if you reached it
 	private static final double angleErrorThreshold = 1;
 	private static final double maxSpeedAtWhatError = 45;
 	private static final double turnPower = 1;
