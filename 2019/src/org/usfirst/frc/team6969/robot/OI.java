@@ -18,7 +18,7 @@ public class OI {
 	//OI class connects sets up controller values. Basically a map of controller buttons.
 
 	//Below are examples from FIRST:
-	//Hi this is NO
+	
 	//// CREATING BUTTONS
 	// One type of button is a joystick button which is any button on a
 	//// joystick.
