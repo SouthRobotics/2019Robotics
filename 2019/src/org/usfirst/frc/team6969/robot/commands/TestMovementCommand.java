@@ -111,7 +111,7 @@ public class TestMovementCommand extends Command {
 		double leftSpeed = power;
 		double rightSpeed = power;
 
-		//turn the robot (case 1, robot is 
+		//turn the robot (case 1, robot needs to turn clockwise)
 		if (error > 0) {
 			double absError = error;
 
@@ -121,6 +121,7 @@ public class TestMovementCommand extends Command {
 			leftSpeed += absError > maxSpeedAtWhatError ? turnPower : turnPower * absError / maxSpeedAtWhatError;
 			rightSpeed -= absError > maxSpeedAtWhatError ? turnPower : turnPower * absError / maxSpeedAtWhatError;
 		}
+		//turn the robot (case 1, robot needs to turn counter-clockwise)
 		if (error < 0) {
 			double absError = error * -1;
 			// Turn right by setting the right track to high speed and left to negative
