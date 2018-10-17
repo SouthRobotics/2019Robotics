@@ -41,12 +41,15 @@ public class TestMovementCommand extends Command {
 	private static final boolean invertLeft = false;//see above
 	private static final boolean stopWhenHitTargetAngle = false;//if true, isFinished returns true when the robot reaches the target angle.
 	private static final boolean keepCommandWhenFinished = true;//keep trying to reach target angle even if you reached it
+	//if (absolute value) |targetAngle - angle| < angleErrorThreshold, robot will stop turning (finichedMoving = true)
 	private static final double angleErrorThreshold = 1;
-	private static final double maxSpeedAtWhatError = 45;
+	//if (absolute value) |targetAngle - angle| < maxSpeedAtWhatError, the speed is multiplied by|targetAngle - angle| < maxSpeedAtWhatError
+	private static final double maxSpeedAtWhatError = 45; 
+	//a multiplier for speed. Probably should be within the range [0, 1]
 	private static final double turnPower = 1;
 
-	public static double targetAngle = 0;// change to rotate robot.
-	public static boolean finishedMoving = false;// is the robot currently executing a movement or turn?
+	public static double targetAngle = 0;// change to rotate robot. (the robot tries to reach this angle, relative to gyro angle)
+	public static boolean finishedMoving = false;// is the robot currently turning? (see angleErrotThreshold)
 	private static Gyro gyro;// reference needed to sense rotation
 	private static DifferentialDrive drive;// reference needed to drive
 
@@ -78,25 +81,37 @@ public class TestMovementCommand extends Command {
 		// during rotation
 
 	}
+	
+	private double findShortestAngleBetween(double target, double value) {
+		double temp = target - value;//get angle between
+		//find shortest angle between (e.g., if target is 0 and value is 360, make sure it returns 0, not -360)
+		temp += (temp > 180) ? -360 : (temp < -180) ? 360 : 0;
+		return temp;
+	}
 
 	// power -- the desired speed of the robot (forward-backward) before turning.
 	// Should be 0 unless robot is turning while moving.
 	// gyro & drive -- references
 	public void turn(double power) {
-		double error = targetAngle - gyro.getAngle();
+		//calculate the relative angle, the angle given by gyro compared to target angle
+		double readAngle = gyro.getAngle()%360;//don't allow angle to exceed 360 by dividing by 360 and using remainder
+		double error = findShortestAngleBetween(targetAngle, readAngle);
+		//check if robot has reached target position (if so, set finishedMoving = true)
 		if (error > -angleErrorThreshold && error < angleErrorThreshold) {
 			finishedMoving = true;
 			return;
+			//if robot is not at target rotation, check if finishedMoving needs to be set to false (only if keepCommandWhenFinished = true)
 		} else if (keepCommandWhenFinished) {
 			finishedMoving = false;
 		}
 
 		if (finishedMoving)
-			return;
-		
+			return;//if finishedMoving, you don't need to execute any movement code
+		//set left and right speeds to power. Useful if robot needs to move while correcting its rotation
 		double leftSpeed = power;
 		double rightSpeed = power;
 
+		//turn the robot (case 1, robot is 
 		if (error > 0) {
 			double absError = error;
 
