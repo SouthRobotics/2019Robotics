@@ -54,6 +54,13 @@ public class TestMovementCommand extends Command {
 	private double coveredDist;
 	
 	public TestMovement sub;//TODO: asign this, might need to make one in robot.java
+	
+	public TestMovementCommand() {
+		// Use requires() here to declare subsystem dependencies
+		requires(Robot.testMovement);
+		
+    	this.initialize(); // after the TeleopDrive object is declared
+	}
 
 	// Called just before this Command runs the first time
 	protected void initialize() {
