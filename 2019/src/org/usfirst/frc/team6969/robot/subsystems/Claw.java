@@ -12,7 +12,7 @@ public class Claw extends Subsystem {
 	private double curSpeed = 0; //-1 to 1
 	private static double maxCurrentIn = 10; // this is the current limit when the claw stops squeezing. With the redline, the claw burns at 110 Amps
 
-	public static Spark clawMotor;
+	public static Spark clawMotor;//test
 	
 	private static double current;
 	
