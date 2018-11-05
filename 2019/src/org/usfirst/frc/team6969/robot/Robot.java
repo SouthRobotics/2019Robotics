@@ -33,7 +33,7 @@ public class Robot extends TimedRobot {
 	public static DriveTrain driveTrain;
 	public static Forklift forklift;
 	public static Claw claw;
-	public static TestMovement testMovement;
+//	public static TestMovement testMovement;
 	
 	//controller map
 	public static OI m_oi;
@@ -55,7 +55,7 @@ public class Robot extends TimedRobot {
 		driveTrain = new DriveTrain();
 		forklift = new Forklift();
 		claw = new Claw();
-		testMovement = new TestMovement();
+//		testMovement = new TestMovement();
 		m_oi = new OI();
 		pdp = new PowerDistributionPanel(30);
 		ds = DriverStation.getInstance();
