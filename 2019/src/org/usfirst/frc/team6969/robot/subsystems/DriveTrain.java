@@ -23,12 +23,12 @@ public class DriveTrain extends Subsystem {
 	private static int leftYAxis;
 	private static int rightYAxis;
 	//public static GyroItg3200 gyro;
-	public static ADXL345_I2C accelerometer; 
+	//public static ADXL345_I2C accelerometer; 
 	
     public void initDefaultCommand() {
     	robotDrive =  RobotMap.drive;
     	//gyro = RobotMap.gyro;
-    	accelerometer = RobotMap.accelerometer;
+    	//accelerometer = RobotMap.accelerometer;
         goHalfSpeed = false;
         goFullSpeed = false;
         leftYAxis = Robot.m_oi.leftYAxis;
