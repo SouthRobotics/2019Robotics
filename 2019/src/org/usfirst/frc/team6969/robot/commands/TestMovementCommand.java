@@ -79,10 +79,10 @@ public class TestMovementCommand extends Command {
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-		if(Robot.m_oi.xButton..get()) {
+		if(Robot.m_oi.xButton.get()) {
 			turn(90);
 		}else {
-			turn(-90);
+//			turn(-90);
 		}
 		
 		// change 0 to speed of robot (-1, 1) if robot is moving forwards/backwards
