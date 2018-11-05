@@ -71,7 +71,7 @@ public class RobotMap {
      */
     
     //Other sensors
-    public static Gyro gyro; //gyro documentation: http://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/ADXRS450_Gyro.html
+    public static AnalogGyro gyro; //gyro documentation: http://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/ADXRS450_Gyro.html
     /*
      * Example code to use gyro:
      * gyro.calibrate() right when robot turns on (calibrate needs to work while robot is stationary)

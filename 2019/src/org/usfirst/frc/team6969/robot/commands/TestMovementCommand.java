@@ -16,7 +16,7 @@ package org.usfirst.frc.team6969.robot.commands;
 
 import org.usfirst.frc.team6969.robot.Robot;
 import org.usfirst.frc.team6969.robot.RobotMap;
-import org.usfirst.frc.team6969.robot.subsystems.TestMovement;
+//import org.usfirst.frc.team6969.robot.subsystems.TestMovement;
 
 //import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
@@ -50,7 +50,7 @@ public class TestMovementCommand extends Command {
 
 	public static double targetAngle = 0;// change to rotate robot. (the robot tries to reach this angle, relative to gyro angle)
 	public static boolean finishedMoving = false;// is the robot currently turning? (see angleErrotThreshold)
-	private static Gyro gyro;// reference needed to sense rotation
+	private static AnalogGyro gyro;// reference needed to sense rotation
 	private static DifferentialDrive drive;// reference needed to drive
 
 	//these variables will be used when the robot automatically moves forward a target distance. Not in use now.
@@ -59,7 +59,7 @@ public class TestMovementCommand extends Command {
 	
 	//need to make constructor
 	
-	public TestMovement sub;//a reference to TestMovement, just incase it will come in handy later
+//	public TestMovement sub;//a reference to TestMovement, just incase it will come in handy later
 	
 	public TestMovementCommand() {
 		// Use requires() here to declare subsystem dependencies
@@ -70,7 +70,7 @@ public class TestMovementCommand extends Command {
 
 	// Called just before this Command runs the first time
 	protected void initialize() {
-		sub = Robot.testMovement;
+//		sub = Robot.testMovement;
 		gyro = RobotMap.gyro;
 		gyro.reset();
 		gyro.calibrate();//unsure if needed, might reset gyro angle
