@@ -11,6 +11,8 @@ import org.usfirst.frc.team6969.robot.OI;
 import org.usfirst.frc.team6969.robot.Robot;
 import org.usfirst.frc.team6969.robot.RobotMap;
 import org.usfirst.frc.team6969.robot.commands.TeleOpDrive;
+import org.usfirst.frc.team6969.robot.commands.TestMovementCommand;
+
 //import org.usfirst.frc.team6969.robot.GyroItg3200;
 import edu.wpi.first.wpilibj.ADXL345_I2C;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -22,6 +24,7 @@ public class DriveTrain extends Subsystem {
 	private static boolean goFullSpeed;
 	private static int leftYAxis;
 	private static int rightYAxis;
+	private static TestMovementCommand test;
 	//public static GyroItg3200 gyro;
 	//public static ADXL345_I2C accelerometer; 
 	
@@ -33,7 +36,7 @@ public class DriveTrain extends Subsystem {
         goFullSpeed = false;
         leftYAxis = Robot.m_oi.leftYAxis;
         rightYAxis = Robot.m_oi.rightYAxis;
-        
+        test.start();
         setDefaultCommand(new TeleOpDrive());
     }
     
@@ -52,6 +55,7 @@ public class DriveTrain extends Subsystem {
     			goFullSpeed = true;    		
     	if(!oi.rightBumper.get())
     			goFullSpeed = false;
+    	
     	
     	//Sets motor speeds
     	if(!goHalfSpeed && !goFullSpeed) { //going 0.75 speed (NORMAL)

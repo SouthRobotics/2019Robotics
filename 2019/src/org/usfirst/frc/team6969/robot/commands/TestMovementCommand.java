@@ -63,7 +63,7 @@ public class TestMovementCommand extends Command {
 	
 	public TestMovementCommand() {
 		// Use requires() here to declare subsystem dependencies
-		requires(Robot.testMovement);
+		requires(Robot.driveTrain);
 		
     	this.initialize(); // after the TeleopDrive object is declared
 	}
@@ -78,6 +78,7 @@ public class TestMovementCommand extends Command {
 	}
 
 	// Called repeatedly when this Command is scheduled to run
+	@Override
 	protected void execute() {
 		if(Robot.m_oi.xButton.get()) {
 			turn(90);
