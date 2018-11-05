@@ -18,7 +18,7 @@ import org.usfirst.frc.team6969.robot.Robot;
 import org.usfirst.frc.team6969.robot.RobotMap;
 import org.usfirst.frc.team6969.robot.subsystems.TestMovement;
 
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+//import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 //All imports below are the default imports that come with the FRC package
 import edu.wpi.first.wpilibj.ADXL345_I2C;
@@ -79,7 +79,13 @@ public class TestMovementCommand extends Command {
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-		turn(0);// change 0 to speed of robot (-1, 1) if robot is moving forwards/backwards
+		if(Robot.m_oi.xButton..get()) {
+			turn(90);
+		}else {
+			turn(-90);
+		}
+		
+		// change 0 to speed of robot (-1, 1) if robot is moving forwards/backwards
 		// during rotation
 
 	}
