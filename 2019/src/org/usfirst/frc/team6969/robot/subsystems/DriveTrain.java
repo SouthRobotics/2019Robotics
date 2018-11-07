@@ -25,7 +25,7 @@ public class DriveTrain extends Subsystem {
 	private static boolean goFullSpeed;
 	private static int leftYAxis;
 	private static int rightYAxis;
-	private static TestMovementCommand test;//cheese solution
+//	private static TestMovementCommand test;//cheese solution
 	public static AnalogGyro gyro;
 	//public static ADXL345_I2C accelerometer; 
 	
@@ -37,8 +37,8 @@ public class DriveTrain extends Subsystem {
         goFullSpeed = false;
         leftYAxis = Robot.m_oi.leftYAxis;
         rightYAxis = Robot.m_oi.rightYAxis;
-        test = new TestMovementCommand();
-        test.start();//cheese solution
+//        test = new TestMovementCommand();
+//        test.start();//cheese solution
         setDefaultCommand(new TeleOpDrive());
     }
     
