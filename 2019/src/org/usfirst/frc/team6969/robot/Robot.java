@@ -14,6 +14,8 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import org.usfirst.frc.team6969.robot.subsystems.*;
 import org.usfirst.frc.team6969.robot.RobotMap;
+import org.usfirst.frc.team6969.robot.commands.TestMovementCommand;
+
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 
