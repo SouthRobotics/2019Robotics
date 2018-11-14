@@ -99,7 +99,7 @@ public class Robot extends TimedRobot {
 		//choose auto command based on location/team
 		
 		//testing this, not sure if it will work
-		//TODO: check if this works
+		//TODO check if this works
 		autonomousCommand = new TestMovementCommand(); //new auto(color, station)
 
 		if (autonomousCommand != null) {

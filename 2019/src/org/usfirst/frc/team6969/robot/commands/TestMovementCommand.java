@@ -170,7 +170,7 @@ public class TestMovementCommand extends Command {
 
 	@Override
 	protected boolean isFinished() {
-		// TODO Auto-generated method stub
+		//Auto-generated method stub
 		return finishedMoving && stopWhenHitTargetAngle;
 	}
 	// Called once after isFinished returns true
