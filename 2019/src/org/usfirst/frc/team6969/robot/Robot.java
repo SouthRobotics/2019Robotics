@@ -95,7 +95,7 @@ public class Robot extends TimedRobot {
 		int station = ds.getLocation();
 		
 		//choose auto command based on location/team
-		autonomousCommand = null; //new auto(color, station)
+		autonomousCommand = new TestMovementCommand(); //new auto(color, station)
 
 		if (autonomousCommand != null) {
 			autonomousCommand.start();
