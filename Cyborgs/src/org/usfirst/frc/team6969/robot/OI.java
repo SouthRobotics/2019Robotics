@@ -6,13 +6,27 @@
 /*----------------------------------------------------------------------------*/
 
 package org.usfirst.frc.team6969.robot;
+import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-	//// CREATING BUTTONS
+	
+	private XboxController controller = new XboxController(1);
+	public Button xbutton = new JoystickButton(controller, 1),
+			abutton = new JoystickButton(controller, 2),
+			bbutton = new JoystickButton(controller, 3),
+			ybutton = new JoystickButton(controller, 4),
+			leftbumb = new JoystickButton(controller, 2),
+			rightbumb = new JoystickButton(controller, 2),
+			backlefttrig = new JoystickButton(controller, 2),
+			backrighttrig = new JoystickButton(controller, 2),
+			backbutton = new JoystickButton(controller, 2),
+			startbutton = new JoystickButton(controller, 2);	//// CREATING BUTTONS
 	// One type of button is a joystick button which is any button on a
 	//// joystick.
 	// You create one by telling it which joystick it's on and which button
