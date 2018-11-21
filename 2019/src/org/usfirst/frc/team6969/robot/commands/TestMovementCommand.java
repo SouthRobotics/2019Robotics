@@ -43,8 +43,11 @@ public class TestMovementCommand extends Command {
 	private static final boolean keepCommandWhenFinished = true;//keep trying to reach target angle even if you reached it
 	//if (absolute value) |targetAngle - angle| < angleErrorThreshold, robot will stop turning (finichedMoving = true)
 	private static final double angleErrorThreshold = 1;
+	private static final double movementErrorThreshold = 1;//!\ no units specified yet, when movement is implemented add units.
+
 	//if (absolute value) |targetAngle - angle| < maxSpeedAtWhatError, the speed is multiplied by|targetAngle - angle| < maxSpeedAtWhatError
 	private static final double maxSpeedAtWhatError = 45; 
+	private static final double maxSpeedAtWhatDist = 2;//for movement (not turning, moving forward/backward)
 	//a multiplier for speed. Probably should be within the range [0, 1]
 	private static final double turnPower = 1;
 
@@ -53,7 +56,7 @@ public class TestMovementCommand extends Command {
 	private static AnalogGyro gyro;// reference needed to sense rotation
 	private static DifferentialDrive drive;// reference needed to drive
 
-	//these variables will be used when the robot automatically moves forward a target distance. Not in use now.
+	//these variables will be used when the robot automatically moves forward a target distance. Not in use now. No units specified
 	private double targetDist;
 	private double coveredDist;
 	
@@ -76,6 +79,10 @@ public class TestMovementCommand extends Command {
 		gyro.calibrate();//unsure if needed, might reset gyro angle
 		drive = RobotMap.drive;
 	}
+	//not in use, use this for autonomous movement in future.
+	public void SetTargetDistance(double dist) {
+		targetDist = dist;
+	}
 
 	// Called repeatedly when this Command is scheduled to run
 	@Override
@@ -85,7 +92,15 @@ public class TestMovementCommand extends Command {
 		}else {
 //			turn(-90);
 		}
-		
+		//use this for autonomus movement forward/backward
+		/**
+		if(Math.abs(targetDist-coveredDist) > movementErrorThreshold) {
+			double mult = targetDist-coveredDist;
+			mult = mult > 0 ? 1: -1;
+			mult = mult > maxSpeedAtWhatDist ? 1 : mult / maxSpeedAtWhatDist;
+			move(mult);
+		}
+		**/
 		// change 0 to speed of robot (-1, 1) if robot is moving forwards/backwards
 		// during rotation
 
@@ -96,6 +111,10 @@ public class TestMovementCommand extends Command {
 		//find shortest angle between (e.g., if target is 0 and value is 360, make sure it returns 0, not -360)
 		temp += (temp > 180) ? -360 : (temp < -180) ? 360 : 0;
 		return temp;
+	}
+	
+	public void move(double power) {
+		RobotMap.drive.tankDrive(power, power);
 	}
 
 	// power -- the desired speed of the robot (forward-backward) before turning.
