@@ -1,4 +1,4 @@
-/**written by Rishi Astra. If you have questions about the code or the code makes no sence ask me**/
+/**written by Rishi Astra. If you have questions about the code or the code makes no sense ask me**/
 /**
  * Best way to test this script would be to disable all other movement.
  * Expected calls to methods:
