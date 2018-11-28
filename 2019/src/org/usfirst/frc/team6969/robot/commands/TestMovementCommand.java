@@ -87,11 +87,11 @@ public class TestMovementCommand extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
-		if(Robot.m_oi.xButton.get()) {
-			turn(90);
-		}else {
-//			turn(-90);
-		}
+//		if(Robot.m_oi.xButton.get()) {
+		turn(90);
+//		}else {
+////			turn(-90);
+//		}
 		//use this for autonomus movement forward/backward
 		/**
 		if(Math.abs(targetDist-coveredDist) > movementErrorThreshold) {
