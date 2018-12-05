@@ -92,7 +92,7 @@ public class TestMovementCommand extends Command {
 //		}else {
 ////			turn(-90);
 //		}
-		//use this for autonomus movement forward/backward
+		//use this for autonomous movement forward/backward
 		/**
 		if(Math.abs(targetDist-coveredDist) > movementErrorThreshold) {
 			double mult = targetDist-coveredDist;
