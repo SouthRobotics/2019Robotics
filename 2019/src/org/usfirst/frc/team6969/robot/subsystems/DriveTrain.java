@@ -69,6 +69,12 @@ public class DriveTrain extends Subsystem {
     	if(goFullSpeed) {
     		robotDrive.tankDrive(oi.getController().getRawAxis(leftYAxis) * -1 , oi.getController().getRawAxis(rightYAxis) * -1);
     	}
+    	
+    	if (oi.circleButton.get())
+    	{
+    		//insert any code here
+    	}
+    	
     }
     
     //Arcade drive rather than take drive
