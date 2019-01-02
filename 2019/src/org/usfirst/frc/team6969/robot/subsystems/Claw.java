@@ -44,7 +44,7 @@ public class Claw extends Subsystem {
     }
     
     public void stop() {
-    	clawMotor.set(0);
+//    	clawMotor.set(0);
     }
     
     public double getCurSpeed() {
@@ -53,7 +53,7 @@ public class Claw extends Subsystem {
 
 	public void setCurSpeed(double curSpeed) {
 		this.curSpeed = curSpeed;
-		clawMotor.set(this.curSpeed);
+//		clawMotor.set(this.curSpeed);
 	}
     
 }
